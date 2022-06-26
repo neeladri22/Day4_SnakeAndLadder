@@ -16,7 +16,5 @@ namespace SnakeAndLadder
         {
             Console.WriteLine("Snake and ladder game played with singel player start at zero");
         }
-       
-       
     }
 }
