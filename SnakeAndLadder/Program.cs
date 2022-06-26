@@ -27,5 +27,38 @@ namespace SnakeAndLadder
             int number = random.Next(1, 7);
             Console.WriteLine("The Random player dice number is: " + number);
         }
+
+        //UC3 Program file
+        public static void UC_3()
+        {
+            int ladder = 1, ladderDice;
+            int snake = 2, snakeDice;
+            Random random = new Random();
+            int Check_Random = random.Next(3);
+
+            switch (Check_Random)
+            {
+                case 1:
+                    {
+                        Random lrandom = new Random();
+                        ladderDice = lrandom.Next(1, 7);
+                        Console.WriteLine("Got ladder and Player moves ahead by the number of position received in the die");
+                        break;
+                    }
+                case 2:
+                    {
+                        Random srandom = new Random();
+                        snakeDice = srandom.Next(1, 7);
+                        Console.WriteLine("Got Snake and Player moves behind by the number of position received in the die");
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("No play, Player stay in same postion");
+                        break;
+                    }
+            }
+
+        }
     }
 }
