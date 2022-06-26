@@ -122,7 +122,6 @@ namespace SnakeAndLadder
             int snake = 2, snakeDice;
             int winLevel = 100;
             int count = 0, num = 0;
-            Console.WriteLine("Welcome to UC_5");
             while (count != winLevel)
             {
                 if (count >= 0 && count < 100)
