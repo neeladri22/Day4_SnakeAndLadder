@@ -15,6 +15,7 @@ namespace SnakeAndLadder
             Program.UC3();
             Program.UC4();
             Program.UC5();
+            Program.UC6();
 
         }
 
@@ -166,6 +167,67 @@ namespace SnakeAndLadder
 
             }
             Console.WriteLine("Player exact wining postion " + count);
+        }
+
+        //UC6 program
+
+        public static void UC6()
+        {
+            int ladder = 1, ladderDice = 0;
+            int snake = 2, snakeDice;
+            int winLevel = 100;
+            int diceRoll = 0;
+            int count = 0, a = 0;
+            
+            while (count != winLevel)
+            {
+                if (count >= 0 && count < 100)
+                {
+                    Random random = new Random();
+                    int randomCheck = random.Next(3);
+                    diceRoll++;
+
+                    switch (randomCheck)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("Got Ladder and move the postion by ahead");
+                                Random rnd = new Random();
+                                ladderDice = rnd.Next(1, 7);
+                                count = count + ladderDice;
+                                Console.WriteLine("Position count is " + count);
+                                a = count;
+                                break;
+                            }
+                        case 2:
+                            {
+                                Random snakeRandom = new Random();
+                                snakeDice = snakeRandom.Next(1, 7);
+                                Console.WriteLine("Got snake and move the postion by behand");
+                                count = count - snakeDice;
+                                Console.WriteLine("Position count is: " + count);
+                                break;
+                            }
+                        default:
+                            {
+                                Console.WriteLine("No play and player stay in same postion");
+                                Console.WriteLine("Position count is: " + count);
+                                break;
+                            }
+                    }
+                }
+                else if (a > 100)
+                {
+                    count = a - ladderDice;
+                }
+                else
+                {
+                    count = 0;
+                }
+
+            }
+            Console.WriteLine("Player wins the postion" + count);
+            Console.WriteLine("Number of time Dice Roll is to win: " + diceRoll);
         }
     }
 }
