@@ -14,6 +14,8 @@ namespace SnakeAndLadder
             Program.UC2();
             Program.UC3();
             Program.UC4();
+            Program.UC5();
+
         }
 
         // UC1 Program file
@@ -110,6 +112,61 @@ namespace SnakeAndLadder
 
             }
             Console.WriteLine("Player reach the wining postion" + count);
+        }
+
+        //UC5 Program
+
+        public static void UC5()
+        {
+            int ladder = 1, ladderDice = 0;
+            int snake = 2, snakeDice;
+            int winLevel = 100;
+            int count = 0, num = 0;
+            Console.WriteLine("Welcome to UC_5");
+            while (count != winLevel)
+            {
+                if (count >= 0 && count < 100)
+                {
+                    Random random = new Random();
+                    int randomCheck = random.Next(3);
+
+                    switch (randomCheck)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("Got Ladder and move the postion by ahead");
+                                Random ladder_random = new Random();
+                                ladderDice = ladder_random.Next(1, 7);
+                                count = count + ladderDice;
+                                num = count;
+                                break;
+                            }
+                        case 2:
+                            {
+                                Random snakeRandom = new Random();
+                                snakeDice = snakeRandom.Next(1, 7);
+                                count = count - snakeDice;
+                                Console.WriteLine("Got snake and move the postion by behind");
+                                break;
+                            }
+                        default:
+                            {
+                                Console.WriteLine("No play and player stay in same postion");
+                                break;
+                            }
+                    }
+                }
+                else if (num > 100)
+                {
+                    count = num - ladderDice;
+                }
+                else
+                {
+                    count = 0;
+                }
+
+            }
+            Console.WriteLine("Player exact wining postion " + count);
         }
     }
 }
