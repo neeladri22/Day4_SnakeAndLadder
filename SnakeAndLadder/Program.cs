@@ -13,6 +13,7 @@ namespace SnakeAndLadder
             Program.UC1();
             Program.UC2();
             Program.UC3();
+            Program.UC4();
         }
 
         // UC1 Program file
@@ -60,6 +61,55 @@ namespace SnakeAndLadder
                     }
             }
 
+        }
+
+        //UC4 Program
+        public static void UC4()
+        {
+            int ladder = 1, ladderDice;
+            int snake = 2, snakeDice;
+            int winLevel = 100;
+            int count = 0;
+            
+            while (count <= winLevel)
+            {
+                if (count >= 0)
+                {
+                    Random random = new Random();
+                    int randomCheck = random.Next(3);
+
+                    switch (randomCheck)
+                    {
+                        case 1:
+                            {
+                                Random rnd = new Random();
+                                ladderDice = rnd.Next(1, 7);
+                                count = count + ladderDice;
+                                Console.WriteLine("Got Ladder and Player moves the postion ahead");
+                                break;
+                            }
+                        case 2:
+                            {
+                                Random snakeran = new Random();
+                                snakeDice = snakeran.Next(1, 7);
+                                count = count - snakeDice;
+                                Console.WriteLine("Got snake and Player moves the behand by postion");
+                                break;
+                            }
+                        default:
+                            {
+                                Console.WriteLine("No play and player staty in same postion");
+                                break;
+                            }
+                    }
+                }
+                else
+                {
+                    count = 0;
+                }
+
+            }
+            Console.WriteLine("Player reach the wining postion" + count);
         }
     }
 }
