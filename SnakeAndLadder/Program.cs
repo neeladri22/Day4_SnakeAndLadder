@@ -12,6 +12,7 @@ namespace SnakeAndLadder
         {
             Program.UC1();
             Program.UC2();
+            Program.UC3();
         }
 
         // UC1 Program file
@@ -29,7 +30,7 @@ namespace SnakeAndLadder
         }
 
         //UC3 Program file
-        public static void UC_3()
+        public static void UC3()
         {
             int ladder = 1, ladderDice;
             int snake = 2, snakeDice;
